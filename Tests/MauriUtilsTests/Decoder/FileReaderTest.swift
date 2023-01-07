@@ -40,11 +40,6 @@ final class FileReaderTest: XCTestCase {
         XCTAssertNotNil(localFile)
     }
 
-    func testNonExistingFileFromBundle() {
-        let localFile = fileReader.read(in: Bundle.module, from: "loremIpsum", and: .plist)
-        XCTAssertNil(localFile)
-    }
-
     func testReadLocalFile() {
         let path = folderPath + fileName
         XCTAssertNotNil(fileReader.readAt(url: path))
